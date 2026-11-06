@@ -3,58 +3,202 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Te koop: Citroën C3 Pluriel 1.6 SensoDrive</title>
-<meta name="description" content="Te koop: Citroën C3 Pluriel 1.6 SensoDrive. Keurig onderhouden, boekjes erbij.">
+<title>Citroën C3 Pluriel 1.6 SensoDrive · € 2.500</title>
+<meta name="description" content="Te koop: Citroën C3 Pluriel 1.6 SensoDrive, 145.000 km, € 2.500. Keurig onderhouden, bekende problemen verholpen, boekjes erbij.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fff;--ink:#222;--muted:#666;--line:#ddd}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1a1a1a;--ink:#e8e8e8;--muted:#aaa;--line:#3a3a3a}}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Georgia,"Times New Roman",serif}
-main{max-width:640px;margin:0 auto;padding:40px 16px 60px}
-h1{font-size:1.8rem;line-height:1.2;margin:0 0 4px}
-h2{font-size:1.15rem;margin:32px 0 8px}
-.sub{color:var(--muted);margin:0 0 28px}
-ul{padding-left:1.2em}
-li{margin:4px 0}
-hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+:root{--bg:#f6f6f4;--card:#fff;--ink:#1c1f23;--muted:#62676d;--line:#e4e4e0;--accent:#1f4e79}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#141618;--card:#1d2023;--ink:#ececea;--muted:#a0a5aa;--line:#2f3337;--accent:#8db8e0}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+header.top{border-bottom:1px solid var(--line);background:var(--card)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;font-size:.92rem;color:var(--muted)}
+header.top strong{color:var(--ink);font-weight:600}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:28px;padding:28px 16px 64px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px}
+h1{font-size:clamp(1.6rem,3.5vw,2.1rem);line-height:1.2;margin:0 0 6px;letter-spacing:-.015em}
+h2{font-size:1.15rem;margin:0 0 12px;letter-spacing:-.01em}
+p{margin:0 0 1em}
+
+/* gallery */
+.gallery{overflow:hidden;margin-bottom:24px}
+.gallery[hidden]{display:none}
+.main-img{aspect-ratio:4/3;background:#000;display:flex;align-items:center;justify-content:center;position:relative}
+.main-img img{width:100%;height:100%;object-fit:contain;display:block}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.9);color:#111;font-size:1.3rem;cursor:pointer}
+.nav.prev{left:12px}.nav.next{right:12px}
+.count{position:absolute;right:12px;bottom:12px;background:rgba(0,0,0,.6);color:#fff;font-size:.8rem;padding:2px 10px;border-radius:99px}
+.thumbs{display:flex;gap:8px;padding:10px;overflow-x:auto}
+.thumbs button{flex:0 0 auto;width:84px;height:63px;padding:0;border:2px solid transparent;border-radius:6px;overflow:hidden;cursor:pointer;background:none}
+.thumbs button[aria-current="true"]{border-color:var(--accent)}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+
+.section{padding:24px;margin-bottom:20px}
+.specs{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:0}
+.specs div{padding:14px 16px;border-right:1px solid var(--line)}
+.specs div:last-child{border-right:0}
+.specs dt{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.specs dd{margin:2px 0 0;font-weight:600}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:4px 24px;padding:0;margin:0;list-style:none}
+.cols li{padding:8px 0 8px 26px;border-bottom:1px solid var(--line);position:relative}
+.cols li::before{content:"";position:absolute;left:2px;top:14px;width:12px;height:7px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+
+table.maint{width:100%;border-collapse:collapse;font-size:.96rem}
+table.maint td{padding:10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+table.maint td:first-child{color:var(--muted);width:42%;padding-right:12px}
+
+/* sidebar */
+aside .sticky{position:sticky;top:20px}
+.price{padding:24px}
+.price .amount{font-size:2rem;font-weight:700;letter-spacing:-.02em;margin:4px 0 2px}
+.price .meta{color:var(--muted);font-size:.92rem;margin:0 0 18px}
+.kv{list-style:none;padding:0;margin:0 0 20px;font-size:.94rem}
+.kv li{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line)}
+.kv li span:first-child{color:var(--muted)}
+.btn{display:block;text-align:center;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px;border-radius:8px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn{color:#10202f}}
+.note{font-size:.88rem;color:var(--muted);margin:14px 0 0}
+.highlight{background:color-mix(in srgb,var(--accent) 8%,var(--card));border-color:color-mix(in srgb,var(--accent) 25%,var(--line))}
+
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.85rem;text-align:center}
+
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  aside{order:-1}
+  aside .sticky{position:static}
+  .specs{grid-template-columns:repeat(2,1fr)}
+  .specs div:nth-child(2){border-right:0}
+  .specs div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .cols{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
+<header class="top"><div class="wrap"><strong>Citroën C3 Pluriel</strong><span>Particulier te koop</span></div></header>
+
+<div class="wrap layout">
 <main>
-<h1>Citroën C3 Pluriel 1.6 SensoDrive</h1>
-<p class="sub">Te koop</p>
+  <div class="gallery card" id="gallery" hidden>
+    <div class="main-img">
+      <img id="mainImg" alt="Citroën C3 Pluriel">
+      <button class="nav prev" id="prev" aria-label="Vorige foto">‹</button>
+      <button class="nav next" id="next" aria-label="Volgende foto">›</button>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="thumbs" id="thumbs"></div>
+  </div>
 
-<p>Onze auto ging op vakantie kapot en we hebben deze als tussenpaus gehad. Het is echt een verrassend leuke auto!</p>
+  <div class="card" style="margin-bottom:20px">
+    <dl class="specs">
+      <div><dt>Kilometerstand</dt><dd>145.000 km</dd></div>
+      <div><dt>Motor</dt><dd>1.6 benzine</dd></div>
+      <div><dt>Transmissie</dt><dd>Automaat (SensoDrive)</dd></div>
+      <div><dt>Carrosserie</dt><dd>Cabrio / open dak</dd></div>
+    </dl>
+  </div>
 
-<p>Ik kan er comfortabel in zitten. Genoeg been- en hoofdruimte, comfortabele stoelen en fijn rijgedrag. Zelfs de kinderen (pubers) pasten achterin.</p>
+  <div class="card section">
+    <h2>Omschrijving</h2>
+    <p>Onze auto ging op vakantie kapot en we hebben deze als tussenpaus gehad. Het is echt een verrassend leuke auto!</p>
+    <p>Ik kan er comfortabel in zitten: genoeg been- en hoofdruimte, comfortabele stoelen en fijn rijgedrag. Zelfs de kinderen (pubers) pasten achterin.</p>
+    <p>Het is de opvolger van de 2CV, vandaar het leuke dakje. Dat kan in veel verschillende standen open, dus ook bij wat frissere temperaturen kun je het dakje (gedeeltelijk) open zetten en toch nog een beetje zon meepakken. Binnendoor met het dakje open en op de snelweg met het dakje dicht? Dat kan gewoon tijdens het rijden. Dit vond ik een groot voordeel ten opzichte van een gewone cabrio. Je kunt hem ook als volledige cabrio rijden.</p>
+    <p>Wij zijn toch weer toe aan een grotere auto die ook een aanhanger en caravan kan trekken, dus mag deze naar een nieuwe liefhebber.</p>
+    <p style="margin:0">Optisch is het een mooie auto, uiteraard met een paar gebruikerssporen die passen bij de leeftijd. Hij staat op goede banden.</p>
+  </div>
 
-<p>Het is de opvolger van de 2CV, vandaar het leuke dakje. Dat kan in veel verschillende standen open, dus ook bij wat frissere temperaturen kun je het dakje (gedeeltelijk) open zetten en toch nog een beetje zon meepakken. Wil je binnendoor met het dakje open en op de snelweg met het dakje dicht? Dat kan gewoon tijdens het rijden. Dit vond ik een groot voordeel ten opzichte van een gewone cabrio. Je kunt hem ook als volledige cabrio rijden.</p>
+  <div class="card section highlight">
+    <h2>Bekende aandachtspunten: al verholpen</h2>
+    <p>De drie veelvoorkomende problemen van de C3 Pluriel zijn bij deze auto al opgelost. De vorige eigenaar was een liefhebber en heeft de actuator en dakbediening laten vervangen.</p>
+    <table class="maint">
+      <tr><td>Kabels dakbediening</td><td>Vervangen, 2 jaar geleden</td></tr>
+      <tr><td>Koppelingsactuator</td><td>Vervangen bij 120.000 km</td></tr>
+      <tr><td>Achterlichten</td><td>Vervangen</td></tr>
+    </table>
+  </div>
 
-<p>Wij zijn toch weer toe aan een grotere auto die ook een aanhanger en caravan kan trekken, dus mag deze naar een nieuwe liefhebber.</p>
+  <div class="card section">
+    <h2>Onderhoud</h2>
+    <table class="maint">
+      <tr><td>Distributieriem</td><td>Vervangen bij 122.000 km</td></tr>
+      <tr><td>Onderhoudshistorie</td><td>Altijd keurig onderhouden, boekjes aanwezig</td></tr>
+      <tr><td>Banden</td><td>Goed</td></tr>
+    </table>
+  </div>
 
-<h2>Onderhoud</h2>
-<ul>
-<li>2 jaar terug zijn de kabels van de dakbediening vervangen, dus daar voorlopig geen omkijken naar.</li>
-<li>De koppelingsactuator is vervangen bij 120.000 km.</li>
-<li>De achterlichten zijn vervangen.</li>
-<li>Distributieriem vervangen bij 122.000 km.</li>
-</ul>
-<p>Daarmee zijn de 3 veelvoorkomende problemen van deze auto al verholpen. Hij is ook altijd keurig onderhouden, boekjes erbij, met originele folder.</p>
-<p>Wij hebben hem overgenomen van een liefhebber. Die heeft de actuator en dakbediening vervangen.</p>
-<p>Kortom, een technisch goede auto. Optisch is het ook een mooie auto, uiteraard wel met een paar gebruikerssporen die passen bij de leeftijd. Hij staat ook op goede banden.</p>
-
-<h2>Uitrusting</h2>
-<ul>
-<li>Climate control</li>
-<li>Originele radio, met bediening bij het stuur (hendel van ruitenwisser)</li>
-<li>2 sleutels</li>
-<li>4x elektrische ramen</li>
-<li>Automaat (SensoDrive)</li>
-<li>Schakelflippers aan het stuur</li>
-</ul>
-
-<hr>
-<p>Kom gerust langs om te kijken en een proefrit te maken.</p>
-<!-- CONTACT: telefoonnummer / e-mail / plaats -->
+  <div class="card section">
+    <h2>Uitrusting</h2>
+    <ul class="cols">
+      <li>Automaat (SensoDrive)</li>
+      <li>Schakelflippers aan het stuur</li>
+      <li>Climate control</li>
+      <li>4x elektrische ramen</li>
+      <li>Originele radio</li>
+      <li>Radiobediening aan het stuur</li>
+      <li>Dak in meerdere standen te openen</li>
+      <li>Volledig als cabrio te rijden</li>
+    </ul>
+  </div>
 </main>
+
+<aside>
+  <div class="sticky">
+    <div class="card price">
+      <h1>Citroën C3 Pluriel 1.6 SensoDrive</h1>
+      <div class="amount">€ 2.500</div>
+      <p class="meta">145.000 km · Automaat · Benzine</p>
+      <ul class="kv">
+        <li><span>Sleutels</span><span>2 stuks</span></li>
+        <li><span>Onderhoudsboekjes</span><span>Aanwezig</span></li>
+        <li><span>Originele folder</span><span>Aanwezig</span></li>
+        <li><span>Distributieriem</span><span>Bij 122.000 km</span></li>
+      </ul>
+      <a class="btn" href="https://link.marktplaats.nl/m2462315334" target="_blank" rel="noopener">Reageer via Marktplaats</a>
+      <p class="note">Kom gerust langs om te kijken en een proefrit te maken.</p>
+    </div>
+  </div>
+</aside>
+</div>
+
+<footer><div class="wrap">Citroën C3 Pluriel 1.6 SensoDrive · particuliere verkoop</div></footer>
+
+<script>
+(function(){
+  var MAX=30, found=[], pending=MAX, idx=0;
+  var g=document.getElementById('gallery'), main=document.getElementById('mainImg'),
+      thumbs=document.getElementById('thumbs'), count=document.getElementById('count');
+  for(let i=1;i<=MAX;i++){
+    var im=new Image();
+    im.onload=function(){found.push(i);done()};
+    im.onerror=done;
+    im.src='fotos/'+i+'.jpg';
+  }
+  function done(){ if(--pending===0) build(); }
+  function build(){
+    if(!found.length) return;
+    found.sort(function(a,b){return a-b});
+    found.forEach(function(n,k){
+      var b=document.createElement('button');
+      b.innerHTML='<img src="fotos/'+n+'.jpg" alt="Foto '+(k+1)+'" loading="lazy">';
+      b.onclick=function(){show(k)};
+      thumbs.appendChild(b);
+    });
+    if(found.length<2){document.getElementById('prev').hidden=true;document.getElementById('next').hidden=true;thumbs.hidden=true}
+    g.hidden=false; show(0);
+  }
+  function show(k){
+    idx=(k+found.length)%found.length;
+    main.src='fotos/'+found[idx]+'.jpg';
+    count.textContent=(idx+1)+' / '+found.length;
+    [].forEach.call(thumbs.children,function(b,j){b.setAttribute('aria-current',j===idx)});
+  }
+  document.getElementById('prev').onclick=function(){show(idx-1)};
+  document.getElementById('next').onclick=function(){show(idx+1)};
+  document.addEventListener('keydown',function(e){if(!found.length)return;if(e.key==='ArrowLeft')show(idx-1);if(e.key==='ArrowRight')show(idx+1)});
+})();
+</script>
 </body>
 </html>
